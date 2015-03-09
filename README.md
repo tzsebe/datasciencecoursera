@@ -1,2 +1,2 @@
 # datasciencecoursera
-Repo I am using for the Coursera Data Science specialization track. We'll see how this evolves.
+Repo I am using for the Coursera Data Science specialization track.
