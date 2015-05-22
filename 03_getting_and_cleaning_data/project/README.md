@@ -1,6 +1,6 @@
 # Getting and Cleaning Data: Class Project #
 
-This repo contains the course project for the Coursera data science specialization track's "Getting and Cleaning Data" course.
+This is the course project for the Coursera data science specialization track's "Getting and Cleaning Data" course.
 
 ## Files ##
 * CodeBook.md: A code book that describes the variables, the data, and any transformations or work that you performed to clean up the data.
