@@ -1,6 +1,6 @@
 # Getting and Cleaning Data: Project Code Book #
 
-This document summarizes the workings of the run_analysis.R script.
+This document summarizes the workings of the run_analysis.R script, and the data it works with.
 
 ## The Data ##
 
@@ -11,7 +11,7 @@ This section goes over some basic infomation about the data we are working with.
 Some basic information about our source data:
 
 * Download the data at: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
-* Information about data: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+* Information about the data: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
 ### Output Data ###
 
@@ -28,7 +28,7 @@ Here, we cover specifics about how the analysis script does its work.
 
 ### Assumptions ###
 
-1. We assume that all mean and std deviation measurement data, which is what we are looking for, has a feature name of the form "*-mean()" or "*-std()", respectively.
+1. We assume that all mean and std deviation measurement data, which is what we are looking for, has a feature name of the form \*-mean() or \*-std(), respectively.
 2. We assume that there are no missing values. This assumption is confirmed in the dataset characteristics document provided. We call this out because run_analysis.R has no special handling for missing values.
 
 ### Analysis Execution ###
