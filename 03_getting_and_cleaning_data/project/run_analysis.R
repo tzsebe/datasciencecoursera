@@ -16,15 +16,15 @@ load_dataset <- function(data_file, labels_file, subjects_file) {
 }
 
 # Declare constants.
-DATASET_ROOT            <- "UCI HAR Dataset/"
-TRAINING_DATA_FILE      <- paste(DATASET_ROOT, "train/X_train.txt", sep = "")
-TRAINING_LABELS_FILE    <- paste(DATASET_ROOT, "train/y_train.txt", sep = "")
-TRAINING_SUBJECTS_FILE  <- paste(DATASET_ROOT, "train/subject_train.txt", sep = "")
-TEST_DATA_FILE          <- paste(DATASET_ROOT, "test/X_test.txt", sep = "")
-TEST_LABELS_FILE        <- paste(DATASET_ROOT, "test/y_test.txt", sep = "")
-TEST_SUBJECTS_FILE      <- paste(DATASET_ROOT, "test/subject_test.txt", sep = "")
-FEATURES_FILE           <- paste(DATASET_ROOT, "features.txt", sep = "")
-ACTIVITY_LABELS_FILE    <- paste(DATASET_ROOT, "activity_labels.txt", sep = "")
+DATASET_ROOT            <- "UCI HAR Dataset"
+TRAINING_DATA_FILE      <- paste(DATASET_ROOT, "train/X_train.txt", sep = "/")
+TRAINING_LABELS_FILE    <- paste(DATASET_ROOT, "train/y_train.txt", sep = "/")
+TRAINING_SUBJECTS_FILE  <- paste(DATASET_ROOT, "train/subject_train.txt", sep = "/")
+TEST_DATA_FILE          <- paste(DATASET_ROOT, "test/X_test.txt", sep = "/")
+TEST_LABELS_FILE        <- paste(DATASET_ROOT, "test/y_test.txt", sep = "/")
+TEST_SUBJECTS_FILE      <- paste(DATASET_ROOT, "test/subject_test.txt", sep = "/")
+FEATURES_FILE           <- paste(DATASET_ROOT, "features.txt", sep = "/")
+ACTIVITY_LABELS_FILE    <- paste(DATASET_ROOT, "activity_labels.txt", sep = "/")
 OUTPUT_AVERAGES_FILE    <- "subject_activity_averages.txt"
 
 # Verify we're at the right place.
