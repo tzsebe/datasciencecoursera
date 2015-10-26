@@ -165,7 +165,7 @@ rbind(result_all_measurements_rf, result_all_measurements_gbm)</code></pre>
 <pre><code>##                   model_name train_acc test_acc train_time
 ## 1  model_rf_all_measurements    1.0000   0.9942   00:45:07
 ## 2 model_gbm_all_measurements    0.9744   0.9619   00:17:23</code></pre>
-<p>Very respectable results, with out of sample error rates in the high 90s. In order to minimize overfitting, we would actually like to see if we can drastically reduce the number of predictors, while maintaining a fairly high accuracy. We accomplish this by first running varImp to get a sense of which predictors have the most weight in the prediction, and then generating 10 models for each method, starting with a single predictor, and adding them in one at a time. This is very similar to <code>anova</code>, which we’ve explored in Regression Models.</p>
+<p>Very respectable results, with out of sample accuracy rates in the high 90s (or error rates below 5%). In order to minimize overfitting, we would actually like to see if we can drastically reduce the number of predictors, while maintaining a fairly high accuracy. We accomplish this by first running varImp to get a sense of which predictors have the most weight in the prediction, and then generating 10 models for each method, starting with a single predictor, and adding them in one at a time. This is very similar to <code>anova</code>, which we’ve explored in Regression Models.</p>
 <p>The first few predictors in the varImp for RF and GBM are about the same, so we’ll just use the ones from RF, since it has the higher accuracy.</p>
 <pre class="r"><code># Extracts the top n predictors from a varImp result
 varImpTopNames &lt;- function(varimp, n) {
@@ -218,8 +218,8 @@ gbm_results &lt;- trainAndEvaluateModels(full_training_set, &quot;imp_measuremen
 <h3>Out-of-sample error</h3>
 <p>Since we’re always training with only 70% of the training data, and validating with the remaining 30%, we can easily estimate the out of sample error by just predicting on that validation set, and picking up the accuracy. In all of the results shown above, the out of sample error estimate shows up as the “test_acc” column on the resulting data frame.</p>
 <pre class="r"><code># Grab out of sample error from our preferred model
-oos_err &lt;- rf_results[rf_results$model_name == &quot;model_rf_imp_measurements_7vars&quot;,]$test_acc</code></pre>
-<p>For our selected model, the error rate estimate is <strong>98.59%</strong>.</p>
+oos_err &lt;- 1 - rf_results[rf_results$model_name == &quot;model_rf_imp_measurements_7vars&quot;,]$test_acc</code></pre>
+<p>For our selected model, the error rate estimate is <strong>1.41%</strong>.</p>
 </div>
 </div>
 <div id="concluding-remarks" class="section level2">

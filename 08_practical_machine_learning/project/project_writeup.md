@@ -164,7 +164,7 @@ rbind(result_all_measurements_rf, result_all_measurements_gbm)
 ## 2 model_gbm_all_measurements    0.9744   0.9619   00:17:23
 ```
 
-Very respectable results, with out of sample error rates in the high 90s. In order to minimize overfitting, we would actually like to see if we can drastically reduce the number of predictors, while maintaining a fairly high accuracy. We accomplish this by first running varImp to get a sense of which predictors have the most weight in the prediction, and then generating 10 models for each method, starting with a single predictor, and adding them in one at a time. This is very similar to `anova`, which we've explored in Regression Models.
+Very respectable results, with out of sample accuracy rates in the high 90s (or error rates below 5%). In order to minimize overfitting, we would actually like to see if we can drastically reduce the number of predictors, while maintaining a fairly high accuracy. We accomplish this by first running varImp to get a sense of which predictors have the most weight in the prediction, and then generating 10 models for each method, starting with a single predictor, and adding them in one at a time. This is very similar to `anova`, which we've explored in Regression Models.
 
 The first few predictors in the varImp for RF and GBM are about the same, so we'll just use the ones from RF, since it has the higher accuracy.
 
@@ -234,10 +234,10 @@ Since we're always training with only 70% of the training data, and validating w
 
 ```r
 # Grab out of sample error from our preferred model
-oos_err <- rf_results[rf_results$model_name == "model_rf_imp_measurements_7vars",]$test_acc
+oos_err <- 1 - rf_results[rf_results$model_name == "model_rf_imp_measurements_7vars",]$test_acc
 ```
 
-For our selected model, the error rate estimate is __98.59%__.
+For our selected model, the error rate estimate is __1.41%__.
 
 
 ## Concluding remarks
