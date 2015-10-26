@@ -1,0 +1,11 @@
+Hello,
+
+Before submitting my project, I was showing it off to some friends over Facebook.
+
+Stupidly, when I submitted it, I actually copy-pasted the link straight out of facebook, so instead of the raw link, I submitted the facebook pass-through link.
+
+If you're logged into facebook, it probably just works transparently. However, here's the real link just in case:
+
+http://tzsebe.github.io/datasciencecoursera/09_developing_data_products/project/slides/index.html
+
+
